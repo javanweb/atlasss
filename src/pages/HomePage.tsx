@@ -1117,28 +1117,6 @@ export const HomePage: React.FC = () => {
 
           </div>
 
-          {/* 3. PROOF BAR ON CLEAN LIGHT BACKGROUND (EDGE-TO-EDGE) */}
-          <div className="rounded-2xl bg-slate-50/90 border border-slate-200/90 p-5 sm:p-8 shadow-sm">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center divide-x divide-x-reverse divide-slate-200">
-              <div className="space-y-1.5">
-                <div className="text-2xl sm:text-4xl font-black text-[#12203C] font-mono tabular-nums">+۴۵۰</div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium">کارخانه و مجتمع طرف قرارداد</div>
-              </div>
-              <div className="space-y-1.5">
-                <div className="text-2xl sm:text-4xl font-black text-[#E06518] font-mono tabular-nums">۱۰۰٪</div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium">تضمین اصالت کالا و گارانتی کتبی</div>
-              </div>
-              <div className="space-y-1.5">
-                <div className="text-2xl sm:text-4xl font-black text-[#12203C] font-mono tabular-nums">+۱۸,۰۰۰</div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium">پارت‌نامبر قطعه موجود در انبار</div>
-              </div>
-              <div className="space-y-1.5">
-                <div className="text-2xl sm:text-4xl font-black text-[#E06518] font-mono tabular-nums">۲۴/۷</div>
-                <div className="text-xs sm:text-sm text-slate-600 font-medium">پشتیبانی اضطراری خطوط تولید</div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </section>
 

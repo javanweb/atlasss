@@ -61,50 +61,67 @@ export const MainBrandsBanner: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900 border-y border-slate-200/90 shadow-sm py-12 sm:py-16 lg:py-20 select-none">
-      {/* Subtle Engineered Background Technical Grid & Ambient Flares */}
-      <div className="absolute inset-0 bg-[radial-gradient(#12203c08_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-      <div className="absolute top-1/2 -translate-y-1/2 left-0 w-96 h-96 bg-orange-500/8 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 -translate-y-1/2 right-0 w-96 h-96 bg-blue-500/8 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative w-full overflow-hidden bg-[#070B12] text-white border-y border-slate-800/80 shadow-2xl py-10 sm:py-14 lg:py-16 select-none">
+      {/* Full-Bleed Dual Machinery Background (Left: Orange FORZA Belt, Right: Blue SWR Valve) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <img
+          src={STORE_ASSETS.brandsFullbleedBg || STORE_ASSETS.forzaSwrDualBanner}
+          alt="برندهای معتبر جهانی FORZA و SWR"
+          className="w-full h-full object-cover object-center"
+        />
+        {/* Smooth Center Vignette so Center Text & Cards Pop Cleanly while Left & Right Machinery Remain Vivid */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(90deg, rgba(7,11,18,0.12) 0%, rgba(7,11,18,0.72) 22%, rgba(7,11,18,0.92) 38%, rgba(7,11,18,0.92) 62%, rgba(7,11,18,0.72) 78%, rgba(7,11,18,0.12) 100%)',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070B12] via-transparent to-[#070B12]/70" />
 
-      {/* Main Content Container */}
-      <div className="relative z-10 max-w-[1140px] mx-auto px-4 sm:px-8 lg:px-6 space-y-10 sm:space-y-12">
+        {/* Ambient Left Orange & Right Blue Glows */}
+        <div className="absolute top-1/2 -translate-y-1/2 left-[12%] w-80 h-80 bg-[#E06518]/15 rounded-full blur-[110px]" />
+        <div className="absolute top-1/2 -translate-y-1/2 right-[12%] w-80 h-80 bg-[#0077FF]/15 rounded-full blur-[110px]" />
+      </div>
+
+      {/* Bottom Glowing Orange Laser Horizon Line */}
+      <div className="absolute bottom-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#E06518] to-transparent shadow-[0_0_20px_#E06518] pointer-events-none z-20" />
+      <div className="absolute bottom-0 left-1/4 right-1/4 h-6 bg-gradient-to-t from-[#E06518]/20 to-transparent blur-md pointer-events-none z-10" />
+
+      {/* Main Content Container (Centered between Left & Right Edge Machinery) */}
+      <div className="relative z-10 max-w-[1100px] mx-auto px-4 sm:px-8 lg:px-6 space-y-8 sm:space-y-10">
         {/* Top Centered Header Section */}
         <div className="text-center space-y-3 max-w-2xl mx-auto" dir="rtl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-xs font-bold text-[#E06518]">
-            <span className="w-2 h-2 rounded-full bg-[#E06518] animate-pulse" />
-            <span>نمایندگی و توزیع مستقیم برندهای بین‌المللی</span>
-          </div>
-          <h2 className="text-2xl sm:text-3xl lg:text-[40px] font-black text-[#12203C] tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-white tracking-tight leading-tight drop-shadow-md">
             برندهای معتبر جهانی،{' '}
-            <span className="text-[#E06518] relative inline-block">
+            <span className="text-[#F97316] bg-gradient-to-l from-[#FF8C00] to-[#E06518] bg-clip-text text-transparent">
               در کنار شما
-              <span className="absolute -bottom-1 inset-x-0 h-1 bg-[#E06518]/20 rounded-full" />
             </span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal max-w-xl mx-auto">
-            پیش به صنعت با همکاری مستقیم با کمپانی‌های مطرح جهانی، تأمین‌کننده رسمی قطعات و تجهیزات صنعتی استاندارد با اصالت تضمین‌شده است.
+          <p className="text-xs sm:text-sm text-slate-300/95 leading-relaxed font-normal max-w-xl mx-auto">
+            پیش به صنعت با همکاری برندهای مطرح جهانی، تأمین‌کننده قطعات و تجهیزات صنعتی با کیفیت،
+            <br className="hidden sm:inline" /> معتبر و با اصالت برای صنایع مختلف کشور است.
           </p>
         </div>
 
-        {/* Dual Brand Split Grid: Left = FORZA, Right = SWR */}
+        {/* Dual Brand Split Grid: Left = FORZA, Right = SWR (Matching Reference Image Layout) */}
         <div
-          className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch pt-2"
+          className="relative grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-stretch pt-2"
           dir="ltr"
         >
           {/* Center Vertical Divider Line */}
-          <div className="hidden lg:block absolute top-4 bottom-4 left-1/2 -translate-x-1/2 w-px bg-slate-200 pointer-events-none" />
+          <div className="hidden lg:block absolute top-2 bottom-2 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-slate-600/45 to-transparent pointer-events-none" />
 
           {/* ================================================================= */}
           {/* LEFT COLUMN: FORZA (Orange Industrial Accent)                     */}
           {/* ================================================================= */}
-          <div className="bg-white/90 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-between space-y-6">
+          <div className="flex flex-col items-center justify-between space-y-6">
             <div className="flex flex-col items-center space-y-4 w-full max-w-md">
               {/* FORZA Logo Lockup */}
               <div className="flex items-center justify-center gap-3.5">
                 {/* Stylized Geometric Orange FORZA Emblem */}
                 <svg
-                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 drop-shadow-md"
+                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 drop-shadow-[0_0_12px_rgba(249,115,22,0.35)]"
                   viewBox="0 0 64 64"
                   fill="none"
                 >
@@ -130,12 +147,12 @@ export const MainBrandsBanner: React.FC = () => {
 
                 <div className="text-left">
                   <div className="flex items-start leading-none">
-                    <span className="text-3xl sm:text-[40px] font-black tracking-wider text-[#12203C] font-sans">
+                    <span className="text-3xl sm:text-[42px] font-black tracking-wider text-white font-sans">
                       FORZA
                     </span>
-                    <span className="text-[10px] text-slate-400 font-bold ml-1 mt-1">®</span>
+                    <span className="text-[10px] text-slate-300 font-bold ml-1 mt-1">®</span>
                   </div>
-                  <div className="text-[9px] sm:text-[10px] tracking-[0.28em] text-[#E06518] font-black uppercase mt-1">
+                  <div className="text-[9px] sm:text-[10px] tracking-[0.28em] text-[#F97316] font-bold uppercase mt-1">
                     POWER YOUR INDUSTRY
                   </div>
                 </div>
@@ -144,16 +161,16 @@ export const MainBrandsBanner: React.FC = () => {
               {/* FORZA Description (RTL Persian) */}
               <p
                 dir="rtl"
-                className="text-xs sm:text-[13px] text-slate-600 leading-relaxed text-center sm:text-right w-full max-w-[380px] font-normal"
+                className="text-xs sm:text-[13px] text-slate-200/95 leading-7 text-center sm:text-right w-full max-w-[360px] font-normal"
               >
-                <strong className="font-bold text-[#12203C]">فورزا (FORZA)</strong> یکی از برندهای نام‌آشنای صنعتی در تولید و تأمین انواع تسمه‌های انتقال نیرو، پولی‌ها و اتصالات خطوط کارخانجات است.
+                <strong className="font-bold text-white">فورزا (FORZA)</strong> یکی از برندهای نام‌آشنای جهانی در تولید و تأمین قطعات صنعتی، اتصالات و تجهیزات با کیفیت بالا برای صنایع مختلف است.
               </p>
 
               {/* FORZA Pill Button */}
-              <div className="pt-1 w-full flex justify-center sm:justify-end max-w-[380px]">
+              <div className="pt-1 w-full flex justify-center sm:justify-end max-w-[360px]">
                 <Link
                   to="/category/swr-forza-exclusive"
-                  className="inline-flex items-center justify-between gap-4 px-6 py-2.5 rounded-xl bg-orange-50 hover:bg-[#E06518] border border-orange-200 hover:border-[#E06518] text-[#E06518] hover:text-white text-xs sm:text-sm font-bold transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group/btn"
+                  className="inline-flex items-center justify-between gap-5 px-6 py-2.5 rounded-full bg-[#0B101B]/80 hover:bg-[#E06518] border border-[#E06518]/80 hover:border-[#E06518] text-[#F97316] hover:text-white text-xs sm:text-[13px] font-bold transition-all duration-300 shadow-[0_0_18px_rgba(224,101,24,0.18)] hover:shadow-[0_0_24px_rgba(224,101,24,0.5)] cursor-pointer group/btn"
                 >
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   <span dir="rtl">مشاهده محصولات فورزا</span>
@@ -162,23 +179,23 @@ export const MainBrandsBanner: React.FC = () => {
             </div>
 
             {/* FORZA 4 Subcategory Cards */}
-            <div className="grid grid-cols-4 gap-2.5 sm:gap-3 w-full max-w-[430px] pt-2">
+            <div className="grid grid-cols-4 gap-2.5 sm:gap-3.5 w-full max-w-[430px] pt-2">
               {forzaCategories.map((item) => (
                 <Link
                   key={item.id}
                   to={item.link}
-                  className="bg-slate-50 hover:bg-white border border-slate-200/90 hover:border-[#E06518] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer group/card aspect-[1/1.18]"
+                  className="bg-[#0D1524]/90 hover:bg-[#131F33] border border-slate-700/60 hover:border-[#E06518] rounded-xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(224,101,24,0.28)] cursor-pointer group/card aspect-[1/1.18]"
                 >
-                  <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-xl p-1 bg-white border border-slate-100">
+                  <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-lg p-1">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain group-hover/card:scale-108 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover/card:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <span
                     dir="rtl"
-                    className="text-[10px] sm:text-[11px] font-bold text-slate-700 group-hover/card:text-[#E06518] transition-colors pt-1.5 truncate w-full"
+                    className="text-[10px] sm:text-[11px] font-bold text-slate-200 group-hover/card:text-[#F97316] transition-colors pt-1.5 truncate w-full"
                   >
                     {item.title}
                   </span>
@@ -190,34 +207,34 @@ export const MainBrandsBanner: React.FC = () => {
           {/* ================================================================= */}
           {/* RIGHT COLUMN: SWR (Blue Industrial Accent)                        */}
           {/* ================================================================= */}
-          <div className="bg-white/90 backdrop-blur-xs rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col items-center justify-between space-y-6">
+          <div className="flex flex-col items-center justify-between space-y-6">
             <div className="flex flex-col items-center space-y-4 w-full max-w-md">
               {/* SWR Logo Lockup */}
               <div className="flex items-center justify-center gap-3.5">
-                {/* Stylized Two-Tone Blue SWR Emblem */}
+                {/* Stylized Two-Tone Blue & White SWR Emblem */}
                 <svg
-                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 drop-shadow-md"
+                  className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 drop-shadow-[0_0_12px_rgba(0,136,255,0.35)]"
                   viewBox="0 0 64 64"
                   fill="none"
                 >
                   <path
                     d="M32 6L10 30L22 42L36 26L28 18L36 10L32 6Z"
-                    fill="#0077FF"
+                    fill="#0088FF"
                   />
                   <path
                     d="M32 58L54 34L42 22L28 38L36 46L28 54L32 58Z"
-                    fill="#0284C7"
+                    fill="#F8FAFC"
                   />
                 </svg>
 
                 <div className="text-left">
                   <div className="flex items-start leading-none">
-                    <span className="text-3xl sm:text-[40px] font-black tracking-wider text-[#12203C] font-sans">
+                    <span className="text-3xl sm:text-[42px] font-black tracking-wider text-white font-sans">
                       SWR
                     </span>
-                    <span className="text-[10px] text-slate-400 font-bold ml-1 mt-1">®</span>
+                    <span className="text-[10px] text-slate-300 font-bold ml-1 mt-1">®</span>
                   </div>
-                  <div className="text-[9px] sm:text-[10px] tracking-[0.24em] text-[#0077FF] font-black uppercase mt-1">
+                  <div className="text-[9px] sm:text-[10px] tracking-[0.24em] text-[#0088FF] font-bold uppercase mt-1">
                     INDUSTRIAL SOLUTIONS
                   </div>
                 </div>
@@ -226,16 +243,16 @@ export const MainBrandsBanner: React.FC = () => {
               {/* SWR Description (RTL Persian) */}
               <p
                 dir="rtl"
-                className="text-xs sm:text-[13px] text-slate-600 leading-relaxed text-center sm:text-right w-full max-w-[380px] font-normal"
+                className="text-xs sm:text-[13px] text-slate-200/95 leading-7 text-center sm:text-right w-full max-w-[360px] font-normal"
               >
-                <strong className="font-bold text-[#12203C]">SWR</strong> با ارائه فناوری‌های نوین در زمینه شیرآلات صنعتی، اتصالات فشارقوی و خطوط لوله‌کشی، انتخابی استاندارد برای صنایع مادر است.
+                <strong className="font-bold text-white">SWR</strong> با ارائه محصولات با کیفیت و فناوری روز دنیا، در زمینه اتصالات، شیرآلات و تجهیزات صنعتی، انتخابی مطمئن برای صنایع مختلف است.
               </p>
 
               {/* SWR Pill Button */}
-              <div className="pt-1 w-full flex justify-center sm:justify-end max-w-[380px]">
+              <div className="pt-1 w-full flex justify-center sm:justify-end max-w-[360px]">
                 <Link
                   to="/category/swr-forza-exclusive"
-                  className="inline-flex items-center justify-between gap-4 px-6 py-2.5 rounded-xl bg-sky-50 hover:bg-[#0077FF] border border-sky-200 hover:border-[#0077FF] text-[#0077FF] hover:text-white text-xs sm:text-sm font-bold transition-all duration-300 shadow-xs hover:shadow-md cursor-pointer group/btn"
+                  className="inline-flex items-center justify-between gap-5 px-6 py-2.5 rounded-full bg-[#0B101B]/80 hover:bg-[#0077FF] border border-[#0077FF]/80 hover:border-[#0077FF] text-[#38BDF8] hover:text-white text-xs sm:text-[13px] font-bold transition-all duration-300 shadow-[0_0_18px_rgba(0,136,255,0.18)] hover:shadow-[0_0_24px_rgba(0,136,255,0.5)] cursor-pointer group/btn"
                 >
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   <span dir="rtl">مشاهده محصولات SWR</span>
@@ -244,23 +261,23 @@ export const MainBrandsBanner: React.FC = () => {
             </div>
 
             {/* SWR 4 Subcategory Cards */}
-            <div className="grid grid-cols-4 gap-2.5 sm:gap-3 w-full max-w-[430px] pt-2">
+            <div className="grid grid-cols-4 gap-2.5 sm:gap-3.5 w-full max-w-[430px] pt-2">
               {swrCategories.map((item) => (
                 <Link
                   key={item.id}
                   to={item.link}
-                  className="bg-slate-50 hover:bg-white border border-slate-200/90 hover:border-[#0077FF] rounded-2xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-md cursor-pointer group/card aspect-[1/1.18]"
+                  className="bg-[#0D1524]/90 hover:bg-[#131F33] border border-slate-700/60 hover:border-[#0088FF] rounded-xl p-2 sm:p-2.5 flex flex-col items-center justify-between text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_6px_20px_rgba(0,136,255,0.28)] cursor-pointer group/card aspect-[1/1.18]"
                 >
-                  <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-xl p-1 bg-white border border-slate-100">
+                  <div className="w-full flex-1 flex items-center justify-center overflow-hidden rounded-lg p-1">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-contain group-hover/card:scale-108 transition-transform duration-300"
+                      className="w-full h-full object-contain group-hover/card:scale-110 transition-transform duration-300"
                     />
                   </div>
                   <span
                     dir="rtl"
-                    className="text-[10px] sm:text-[11px] font-bold text-slate-700 group-hover/card:text-[#0077FF] transition-colors pt-1.5 truncate w-full"
+                    className="text-[10px] sm:text-[11px] font-bold text-slate-200 group-hover/card:text-[#38BDF8] transition-colors pt-1.5 truncate w-full"
                   >
                     {item.title}
                   </span>
