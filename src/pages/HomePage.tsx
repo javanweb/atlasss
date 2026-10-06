@@ -34,9 +34,16 @@ import { STORE_ASSETS } from '../assets/images';
 import { AiVisualPartSearchModal } from '../components/search/AiVisualPartSearchModal';
 import { AiConsultModal } from '../components/search/AiConsultModal';
 import { OurClientsSection } from '../components/home/OurClientsSection';
+import { IndustrialTrustBar } from '../components/home/IndustrialTrustBar';
+import { IndustrialCategoriesGrid } from '../components/home/IndustrialCategoriesGrid';
 import { PopularProductsSection } from '../components/home/PopularProductsSection';
+import { LeadConsultationBanner } from '../components/home/LeadConsultationBanner';
+import { IndustrialSolutionsSection } from '../components/home/IndustrialSolutionsSection';
 import { MainBrandsBanner } from '../components/home/MainBrandsBanner';
+import { WhyChooseUsSection } from '../components/home/WhyChooseUsSection';
+import { CaseStudiesSection } from '../components/home/CaseStudiesSection';
 import { EncyclopediaArticlesSection } from '../components/home/EncyclopediaArticlesSection';
+import { FinalLeadCtaBanner } from '../components/home/FinalLeadCtaBanner';
 
 export const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -105,64 +112,64 @@ export const HomePage: React.FC = () => {
     {
       id: 1,
       image: STORE_ASSETS.heroSteelCoils || STORE_ASSETS.heroPulley,
-      eyebrow: 'تأمین قطعات صنعتی با کیفیت، قیمت رقابتی، برای آینده‌ای مطمئن',
-      titlePart1: 'همراه صنعتگران',
-      titlePart2: 'در مسیر رشد و پیشرفت',
+      eyebrow: 'راهکارهای انتقال قدرت و تجهیزات صنعتی',
+      titlePart1: 'انتقال قدرت مطمئن برای خطوط تولید',
+      titlePart2: 'با تجهیزات صنعتی FORZA و SWR',
       description:
-        'ارائه‌دهنده قطعات و تجهیزات صنعتی با کیفیت، از معتبرترین برندهای جهانی با تأمین مطمئن، قیمت رقابتی و پشتیبانی تخصصی خطوط تولید کارخانجات.',
+        'تأمین تخصصی تجهیزات انتقال قدرت و قطعات خطوط تولید، با تمرکز بر انتخاب صحیح، کیفیت و پشتیبانی فنی.',
       primaryBtn: {
+        text: 'درخواست مشاوره و استعلام قیمت',
+        action: 'consult',
+      },
+      secondaryBtn: {
         text: 'مشاهده محصولات',
         link: '/products',
       },
-      secondaryBtn: {
-        text: 'معرفی شرکت',
-        action: 'consult',
-      },
       badge: {
-        title: 'تجربه‌ی موفق همکاری با صنایع پیشرو',
-        subtitle: 'کیفیت، سرعت، اعتماد',
+        title: 'تضمین کیفیت و اصالت قطعات صنعتی',
+        subtitle: 'پشتیبانی فنی مهندسین مکانیک',
       },
     },
     {
       id: 2,
       image: STORE_ASSETS.heroPulley,
-      eyebrow: 'نمایندگی رسمی و انحصاری برترین برندهای اروپایی',
-      titlePart1: 'سیستم‌های انتقال قدرت',
-      titlePart2: 'با استاندارد FORZA و SWR',
+      eyebrow: 'تأمین برندهای معتبر بین‌المللی',
+      titlePart1: 'سیستم‌های انتقال قدرت تخصصی',
+      titlePart2: 'تسمه، کوپلینگ و پولی‌های استاندارد',
       description:
-        'تأمین مستقیم انواع پولی‌های صنعتی، فلکه چدنی، تسمه‌های دنده‌ای و شیاردار با بالاترین بازدهی گشتاور و طول عمر مکانیکی تضمین‌شده.',
+        'تأمین مستقیم انواع پولی‌های صنعتی، تسمه‌های نسوز و دنده‌ای FORZA و شیرآلات فشار قوی SWR با بالاترین بازدهی گشتاور.',
       primaryBtn: {
-        text: 'مشاهده قطعات FORZA و SWR',
-        link: '/category/swr-forza-exclusive',
-      },
-      secondaryBtn: {
-        text: 'استعلام فوری قیمت و موجودی',
+        text: 'درخواست مشاوره و استعلام قیمت',
         action: 'consult',
       },
+      secondaryBtn: {
+        text: 'مشاهده محصولات FORZA و SWR',
+        link: '/category/swr-forza-exclusive',
+      },
       badge: {
-        title: 'تضمین اصالت قطعات و گارانتی تعویض',
-        subtitle: 'استاندارد DIN آلمان و اروپا',
+        title: 'کاهش ریسک توقف خط تولید',
+        subtitle: 'تطبیق ابعادی بر اساس استاندارد DIN',
       },
     },
     {
       id: 3,
       image: STORE_ASSETS.heroBanner,
-      eyebrow: 'سامانه مکانیزه هوشمند شناسایی و تأمین قطعات فوری',
-      titlePart1: 'توقف خط تولید، هرگز!',
-      titlePart2: 'تأمین فوری قطعات کارخانجات',
+      eyebrow: 'سامانه استعلام فوری و شناسایی قطعه',
+      titlePart1: 'کاهش زمان توقف خط تولید',
+      titlePart2: 'تأمین فوری قطعات اضطراری',
       description:
-        'تنها با ارسال تصویر یا پلاک قطعه مستهلک، قطعه فابریک استاندارد را از انبار مرکزی هایپر صنعت اطلس یزد با ارسال اکسپرس دریافت کنید.',
+        'با ارسال مشخصات فنی یا تصویر پلاک قطعه مستهلک، قطعه استاندارد را با پیش‌فاکتور رسمی و ارسال سریع دریافت کنید.',
       primaryBtn: {
-        text: 'ارسال تصویر قطعه با هوش مصنوعی',
+        text: 'ارسال مشخصات یا تصویر قطعه',
         action: 'visualSearch',
       },
       secondaryBtn: {
-        text: 'شروع مشاوره فنی آنلاین',
+        text: 'درخواست مشاوره فنی',
         action: 'consult',
       },
       badge: {
-        title: 'ارسال فوری و اکسپرس به سراسر کشور',
-        subtitle: 'پشتیبانی ۲۴ ساعته خطوط تولید',
+        title: 'ارسال اکسپرس به شهرک‌های صنعتی',
+        subtitle: 'پشتیبانی و پیگیری سفارشات',
       },
     },
   ];
@@ -612,7 +619,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* ========================================================================= */}
-        {/* CLIENTS LOGO TICKER BAR AT BOTTOM OF HERO (جایگزین دیو پایین هیرو)        */}
+        {/* CLIENTS LOGO TICKER BAR AT BOTTOM OF HERO                                 */}
         {/* ========================================================================= */}
         <div className="relative z-20 w-full bg-white border-t border-slate-100">
           <OurClientsSection />
@@ -620,146 +627,35 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 2 & 3 CONTAINER - INSIDE MAX-W-7XL                                */}
+      {/* 2. TRUST BAR - اثبات اولیه (قابل اعتماد هستیم)                            */}
       {/* ========================================================================= */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 my-8 sm:my-10">
-        {/* ========================================================================= */}
-        {/* 2. DUAL AI FEATURE BANNER (مشاوره هوشمند قطعات & پیدا کردن قطعه با AI)       */}
-        {/* ========================================================================= */}
-        <section className="relative overflow-hidden rounded-3xl bg-[#55565A] text-white border border-[#CBD2D8] shadow-md p-6 sm:p-8">
-          {/* Subtle Accent Glow */}
-          <div className="absolute -right-16 -top-16 w-64 h-64 bg-[#E06518]/20 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -left-16 -bottom-16 w-64 h-64 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+      <IndustrialTrustBar />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 divide-y lg:divide-y-0 lg:divide-x lg:divide-x-reverse divide-white/20">
-            {/* Card A (Right in RTL): مشاوره با هوش مصنوعی */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 pb-6 lg:pb-0 lg:pl-6">
-              {/* Visual: Glowing AI Cybernetic Face */}
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 border border-[#E06518]/40 shadow-lg bg-[#12203C] group">
-                <img
-                  src={STORE_ASSETS.aiConsultRobot}
-                  alt="مشاوره هوشمند قطعات خط تولید"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute bottom-1.5 inset-x-1.5 bg-[#12203C]/90 backdrop-blur-xs text-[10px] text-center font-bold text-[#E06518] py-0.5 rounded border border-[#E06518]/40">
-                  هوشمند خط تولید
-                </div>
-              </div>
+      {/* ========================================================================= */}
+      {/* 3. PRODUCT CATEGORIES - محصولات اصلی (چه چیزی نیاز دارید؟)                 */}
+      {/* ========================================================================= */}
+      <IndustrialCategoriesGrid />
 
-              {/* Details */}
-              <div className="flex-1 space-y-2.5 text-right">
-                <h3 className="text-lg sm:text-xl font-black text-white">مشاوره هوشمند قطعات خط تولید</h3>
-                <p className="text-xs text-slate-200 leading-relaxed">
-                  مشخصات یا ایراد خط تولید کارخانه خود را اعلام کنید تا سامانه هوشمند هایپر صنعت بهترین قطعات جایگزین را به شما پیشنهاد دهد.
-                </p>
-                <div className="pt-1">
-                  <button
-                    type="button"
-                    onClick={() => setIsConsultOpen(true)}
-                    className="h-10 px-5 bg-white text-[#55565A] hover:bg-[#DEE2E5] border border-transparent hover:border-[#E06518] text-xs font-bold rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm group"
-                  >
-                    <span>شروع مشاوره آنلاین قطعه</span>
-                    <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform text-[#E06518]" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Card B (Left in RTL): پیدا کردن محصول با AI */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 pt-6 lg:pt-0 lg:pr-6">
-              {/* Details */}
-              <div className="flex-1 space-y-2.5 text-right order-2 sm:order-1">
-                <div className="flex items-center gap-2">
-                  <h3 className="text-lg sm:text-xl font-black text-white">شناسایی تصویری قطعه با هوش مصنوعی</h3>
-                </div>
-                <p className="text-xs text-slate-200 leading-relaxed">
-                  از قطعه مستهلک، پولی، تسمه یا پلاک ماشین‌آلات خط تولید عکس بگیرید تا قطعه فابریک استاندارد در انبار هایپر صنعت فوراً شناسایی شود.
-                </p>
-                <div className="pt-1">
-                  <button
-                    type="button"
-                    onClick={() => setIsVisualSearchOpen(true)}
-                    className="h-10 px-5 bg-[#E06518] hover:bg-[#C95210] text-white text-xs font-bold rounded-xl transition-all flex items-center gap-2 cursor-pointer shadow-sm group"
-                  >
-                    <Camera className="w-4 h-4 text-white" />
-                    <span>ارسال تصویر قطعه خط تولید</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Visual: Smartphone HUD Part Scanner */}
-              <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden shrink-0 border border-[#E06518]/40 shadow-lg bg-[#12203C] order-1 sm:order-2 group">
-                <img
-                  src={STORE_ASSETS.aiSearchMobile}
-                  alt="شناسایی هوشمند قطعه"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-2 left-2 w-5 h-5 rounded-full bg-[#12203C]/85 backdrop-blur-xs flex items-center justify-center border border-white/20">
-                  <span className="w-2 h-2 rounded-full bg-[#E06518] animate-pulse" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ========================================================================= */}
-        {/* 3. PRODUCT CATEGORIES (7 items matching screenshot)                       */}
-        {/* ========================================================================= */}
-        <section className="space-y-6">
-          {/* Section Header */}
-          <div className="flex items-end justify-between border-b border-slate-200/80 pb-4">
-            <div className="space-y-1">
-              <h2 className="text-xl sm:text-2xl font-black text-[#55565A]">دسته‌بندی قطعات خطوط تولید</h2>
-              <p className="text-xs sm:text-sm text-slate-500">تأمین کلیه قطعات مصرفی و یدکی انواع خطوط تولید و کارخانجات</p>
-            </div>
-
-            <Link
-              to="/products"
-              className="text-xs sm:text-sm font-bold text-[#E06518] hover:text-[#C95210] flex items-center gap-1.5 transition-colors"
-            >
-              <span>مشاهده همه ۸۶۴ قطعه</span>
-              <ArrowLeft className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* 8 Clean Cards Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
-            {categories.map(cat => (
-              <Link
-                key={cat.id}
-                to={cat.link}
-                className="group bg-white rounded-2xl border border-slate-200/80 p-3 flex flex-col justify-between hover:border-[#E06518] hover:shadow-[0_8px_25px_rgba(249,115,22,0.2)] hover:ring-2 hover:ring-orange-500/20 hover:-translate-y-1 transition-all duration-300 text-right"
-              >
-                {/* Product Image Box */}
-                <div className="w-full aspect-square rounded-xl overflow-hidden bg-slate-50 border border-slate-100 flex items-center justify-center mb-3 group-hover:bg-orange-50/40 group-hover:border-orange-200/60 transition-colors">
-                  <img
-                    src={cat.image}
-                    alt={cat.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-
-                {/* Title & Orange Arrow Circle Button */}
-                <div className="flex items-center justify-between gap-1.5 pt-1">
-                  <div className="w-7 h-7 rounded-full bg-[#E06518] group-hover:bg-[#C95210] text-white flex items-center justify-center shrink-0 shadow-xs group-hover:shadow-[0_0_8px_#E06518] transition-all">
-                    <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
-                  </div>
-                  <h3 className="font-bold text-xs text-[#55565A] group-hover:text-[#E06518] transition-colors line-clamp-1">
-                    {cat.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
+      {/* ========================================================================= */}
+      {/* 4. PRODUCT SHOWCASE - محصولات منتخب و پرکاربرد (این‌ها را تأمین می‌کنیم)  */}
+      {/* ========================================================================= */}
+      <div className="w-full my-4">
+        <PopularProductsSection />
       </div>
 
       {/* ========================================================================= */}
-      {/* 4. COVERED INDUSTRIES - 100% FULL WIDTH MATCHING REFERENCE UI/UX           */}
+      {/* 5. TECHNICAL CONSULTING BANNER - لید جنریشن (اگر نمی‌دانید چه انتخاب کنید) */}
+      {/* ========================================================================= */}
+      <LeadConsultationBanner
+        onOpenConsult={() => setIsConsultOpen(true)}
+        onOpenVisualSearch={() => setIsVisualSearchOpen(true)}
+      />
+
+      {/* ========================================================================= */}
+      {/* 6. INDUSTRIES - صنایع (صنعت شما را می‌شناسیم)                             */}
       {/* ========================================================================= */}
       <section
-        className="relative w-full overflow-hidden bg-[#12203C] text-white py-14 sm:py-20 my-8 sm:my-12 shadow-2xl border-y border-orange-950/40"
+        className="relative w-full overflow-hidden bg-[#12203C] text-white py-14 sm:py-20 my-4 shadow-2xl border-y border-orange-950/40"
         dir="rtl"
       >
         {/* Background Plant Backdrop with natural transparent gradient overlay */}
@@ -773,7 +669,7 @@ export const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
         </div>
 
-        {/* Diagonal Glowing Laser Light Rays at bottom right (just like in screenshot) */}
+        {/* Diagonal Glowing Laser Light Rays at bottom right */}
         <div className="absolute bottom-0 right-0 w-[55%] h-32 pointer-events-none z-1 overflow-hidden opacity-80">
           <div className="absolute -bottom-10 right-10 w-[650px] h-[3px] bg-gradient-to-r from-transparent via-[#E06518] to-transparent rotate-[-18deg] shadow-[0_0_15px_#E06518]" />
           <div className="absolute -bottom-16 right-32 w-[550px] h-[2px] bg-gradient-to-r from-transparent via-[#C95210] to-transparent rotate-[-18deg] shadow-[0_0_10px_#C95210]" />
@@ -783,8 +679,7 @@ export const HomePage: React.FC = () => {
         {/* Subtle Industrial Background Dot Pattern */}
         <div className="absolute inset-0 z-1 bg-[radial-gradient(#ffffff0f_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
 
-        {/* Carousel Navigation Chevron Arrows (Left & Right) */}
-        {/* Right Arrow: only shown when user has scrolled towards the left / can scroll back right */}
+        {/* Carousel Navigation Chevron Arrows */}
         <button
           type="button"
           onClick={handleScrollRight}
@@ -796,7 +691,6 @@ export const HomePage: React.FC = () => {
           <ChevronRight className="w-5 h-5 group-hover:scale-110 transition-transform" />
         </button>
 
-        {/* Left Arrow: always visible to scroll left (forward in RTL) */}
         <button
           type="button"
           onClick={handleScrollLeft}
@@ -806,35 +700,26 @@ export const HomePage: React.FC = () => {
           <ChevronLeft className="w-5 h-5 group-hover:scale-110 transition-transform" />
         </button>
 
-        {/* Main Content Layout: In RTL, flex-col lg:flex-row puts first child (Text Header) on the RIGHT, and second child (Cards) on the LEFT */}
+        {/* Main Content Layout */}
         <div className="relative z-10 max-w-[1520px] mx-auto px-4 sm:px-8 lg:px-12 flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
-          {/* Right Header Text Column (در دسکتاپ دقیقاً در سمت راست قرار می‌گیرد) */}
+          {/* Right Header Text Column */}
           <div className="w-full lg:w-[420px] xl:w-[460px] space-y-4 text-right shrink-0">
-            {/* Top English Brand Label: ATLAS TRADING ——— */}
             <div className="flex items-center gap-2 justify-start">
               <span className="text-xs sm:text-sm font-black tracking-[0.25em] text-[#E06518] uppercase font-mono">
-                ATLAS TRADING
+                INDUSTRIES & SOLUTIONS
               </span>
               <span className="w-12 h-[2px] bg-[#E06518]" />
             </div>
 
-            {/* Subtitle */}
-            <p className="text-xs sm:text-sm font-bold text-slate-200 tracking-wide">
-              تأمین‌کننده قطعات و تجهیزات صنعتی
-            </p>
-
-            {/* Main Headline (تأمین قطعات خطوط صنایع مختلف) */}
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[46px] font-black text-white leading-[1.2] tracking-tight">
-              تأمین قطعات خطوط
+            <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-black text-white leading-[1.2] tracking-tight">
+              راهکارهای ما برای
               <span className="block text-[#E06518] pt-1">صنایع مختلف</span>
             </h2>
 
-            {/* Description Paragraph */}
             <p className="text-xs sm:text-sm text-slate-200/90 leading-relaxed font-light">
-              از خطوط کاشی و سرامیک، نساجی و فولاد تا صنایع غذایی، فولاد، پتروشیمی و نیروگاهی؛ با بهترین برندها و کیفیت تضمین‌شده، همراه شما در تأمین قطعات صنعتی هستیم.
+              تجهیزات و راهکارهای انتقال قدرت متناسب با شرایط هر صنعت؛ از فولاد، سیمان و پتروشیمی تا صنایع غذایی، نیروگاهی و ماشین‌سازی.
             </p>
 
-            {/* CTA Button: مشاهده قطعات خطوط (Large Orange Glowing Button) */}
             <div className="pt-3">
               <Link
                 to="/products"
@@ -846,7 +731,7 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Scrollable Cards Row (در دسکتاپ در سمت چپ قرار می‌گیرد) */}
+          {/* Scrollable Cards Row */}
           <div
             id="industries-scroll-container"
             ref={industriesScrollRef}
@@ -863,33 +748,24 @@ export const HomePage: React.FC = () => {
                   to={ind.link}
                   className="group relative w-[170px] sm:w-[195px] shrink-0 aspect-[1/1.7] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-end p-2.5 sm:p-3 transition-all duration-300 snap-start cursor-pointer border-2 border-white/15 hover:border-[#E06518] hover:shadow-[0_0_25px_rgba(249,115,22,0.45)] hover:ring-2 hover:ring-orange-500/30 hover:scale-[1.03] hover:z-10"
                 >
-                  {/* Card Industrial Machinery Photo */}
                   <img
                     src={ind.image}
                     alt={ind.title}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
-
-                  {/* Clean Natural Contrast gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-
-                  {/* Top Subtle Amber Highlight glow on hover */}
                   <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-transparent via-[#E06518] to-transparent transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
 
-                  {/* Bottom Glass Card Pill with Icon + Title + Orange Arrow */}
-                  <div className="relative z-10 flex items-center justify-between gap-1.5 bg-[#12203C]/85 backdrop-blur-md px-2.5 py-2 rounded-xl border border-white/15 shadow-lg group-hover:border-orange-500/60 group-hover:shadow-[0_0_12px_rgba(249,115,22,0.25)] transition-all duration-300">
-                    {/* Left Icon (Orange Arrow Circle Button) */}
-                    <div className="w-6 h-6 rounded-full bg-[#E06518] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-[#C95210] group-hover:shadow-[0_0_8px_#E06518] transition-all">
+                  <div className="relative z-10 flex items-center justify-between gap-1.5 bg-[#12203C]/85 backdrop-blur-md px-2.5 py-2 rounded-xl border border-white/15 shadow-lg group-hover:border-orange-500/60 transition-all duration-300">
+                    <div className="w-6 h-6 rounded-full bg-[#E06518] text-white flex items-center justify-center shrink-0 shadow-sm group-hover:bg-[#C95210] transition-all">
                       <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
                     </div>
 
-                    {/* Middle Title */}
                     <span className="text-xs sm:text-[13px] font-bold text-white group-hover:text-orange-200 transition-colors line-clamp-1">
                       {ind.title}
                     </span>
 
-                    {/* Right Mini Industry Category Icon */}
                     {IconComp && (
                       <div className="w-5 h-5 flex items-center justify-center shrink-0 text-orange-400/80 group-hover:text-[#E06518] transition-colors">
                         <IconComp className="w-3.5 h-3.5" />
@@ -902,7 +778,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Carousel / Slider Indicator Dots */}
+        {/* Slider Indicator Dots */}
         <div className="flex items-center justify-center gap-2 pt-8 sm:pt-12 relative z-10">
           <span className="w-9 h-2.5 rounded-full bg-[#E06518] shadow-[0_0_10px_#E06518]" />
           <span className="w-7 h-2 rounded-full bg-white/25" />
@@ -912,292 +788,37 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* ========================================================================= */}
-      {/* SECTION 5, 6, 7 CONTAINER                                                 */}
+      {/* 7. SOLUTIONS - راهکارها (مشکل شما را واقعاً حل می‌کنیم)                   */}
       {/* ========================================================================= */}
-      <div className="w-full space-y-12 my-8 sm:my-10">
-        {/* ========================================================================= */}
-        {/* POPULAR PRODUCTS - استعلام قیمت آنلاین قطعات پربازدید                       */}
-        {/* ========================================================================= */}
-        <PopularProductsSection />
-
-        {/* ========================================================================= */}
-        {/* 5. MAIN TRUSTED BRANDS (FORZA & SWR CINEMATIC DUAL BANNER)                */}
-        {/* ========================================================================= */}
-        <MainBrandsBanner />
-      </div>
+      <IndustrialSolutionsSection onOpenConsult={() => setIsConsultOpen(true)} />
 
       {/* ========================================================================= */}
-      {/* 6. WHY SANATPISH SECTION (چرا صنعت‌پیش؟ - تمام‌صفحه، لبه‌به‌لبه و فوق‌العاده مدرن) */}
+      {/* 8. BRANDS - برندهای معتبر (با چه برندهایی کار می‌کنیم)                     */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-12 sm:py-20 bg-white text-slate-900 border-y border-slate-200/80 overflow-hidden" dir="rtl">
-        {/* Subtle Engineered Background Technical Grid & Ambient Lighting */}
-        <div className="absolute inset-0 bg-[radial-gradient(#12203c0a_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/10 via-amber-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-600/8 via-cyan-500/5 to-transparent rounded-full blur-3xl pointer-events-none" />
-
-        {/* Edge-to-Edge Container without excessive empty side margins */}
-        <div className="w-full px-3 sm:px-6 lg:px-8 xl:px-10 space-y-8 sm:space-y-12 relative z-10">
-          
-          {/* 1. EDITORIAL ASYMMETRIC HEADER */}
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-slate-200">
-            <div className="space-y-2.5 text-right max-w-4xl">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-50 border border-orange-200/80 text-xs font-black text-[#E06518]">
-                <span className="w-2 h-2 rounded-full bg-[#E06518] animate-pulse" />
-                <span>استاندارد مرجع تأمین و لجستیک قطعات خطوط تولید صنعتی</span>
-              </div>
-              <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-black leading-[1.25] tracking-tight text-[#12203C]">
-                چرا خطوط تولید پیشرو،{' '}
-                <span className="text-[#E06518] relative inline-block">
-                  صنعت‌پیش
-                  <span className="absolute -bottom-1 inset-x-0 h-1 bg-[#E06518]/20 rounded-full" />
-                </span>{' '}
-                را انتخاب می‌کنند؟
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 font-normal leading-relaxed max-w-3xl">
-                تأمین بدون‌واسطه قطعات اورجینال اروپایی و آسیایی، بازرسی آزمایشگاهی و کنترل کیفیت (QC) پیش از ارسال، به همراه همراهی شبانه‌روزی مهندسین مکانیک جهت به صفر رساندن توقف خطوط کارخانجات.
-              </p>
-            </div>
-
-            {/* Header Right Key Action: دکمه بیشتر بدانید */}
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                to="/about"
-                className="h-12 px-7 bg-gradient-to-r from-[#C95210] to-[#E06518] hover:from-[#C2410C] hover:to-[#C95210] text-white font-bold text-xs sm:text-sm rounded-xl shadow-[0_6px_20px_rgba(224,101,24,0.35)] hover:scale-[1.02] hover:shadow-[0_8px_25px_rgba(224,101,24,0.45)] transition-all flex items-center gap-2.5 cursor-pointer active:scale-95 group"
-              >
-                <span>بیشتر بدانید</span>
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              </Link>
-            </div>
-          </div>
-
-          {/* 2. HIGH-IMPACT BENTO GRID: 4 MONOLITHIC VISUAL SHOWCASES (EDGE-TO-EDGE) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-stretch">
-            
-            {/* CARD 1 (7 COLS): QC & Laboratory Material Inspection */}
-            <div className="lg:col-span-7 relative min-h-[380px] sm:min-h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-[#E06518] group shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-end p-5 sm:p-8 lg:p-10">
-              <img
-                src={STORE_ASSETS.whySanatQc}
-                alt="واحد کنترل کیفیت QC و بازرسی متالوژی صنعت‌پیش"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-
-              {/* Floating Top Tag */}
-              <div className="absolute top-4 sm:top-6 right-4 sm:right-6 left-4 sm:left-6 flex items-center justify-between text-[11px] font-bold">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#12203C]/90 backdrop-blur-md border border-white/20 text-orange-400 shadow-md flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-ping" />
-                  واحد کنترل کیفیت (QC) و آزمایشگاه متالوژی
-                </span>
-                <span className="text-white font-mono px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md tabular-nums border border-white/10">
-                  DIN / ISO 9001
-                </span>
-              </div>
-
-              {/* Content Body */}
-              <div className="relative z-10 space-y-2.5 text-right text-white">
-                <div className="flex items-center gap-2 text-orange-400 text-xs font-bold">
-                  <ShieldCheck className="w-4 h-4 text-orange-400" />
-                  <span>تضمین ۱۰۰٪ اصالت فیزیکی و آزمون میکرومتری</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white drop-shadow-sm">
-                  برگه آنالیز متریال و شناسنامه فنی استاندارد
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed font-normal">
-                  کلیه قطعات پیش از بارگیری به سمت کارخانجات، توسط ابزار دقیق از نظر تلرانس میکرونی، سختی آلیاژ و فشار دینامیکی بازرسی و همراه با گارانتی کتبی تعویض تحویل می‌شوند.
-                </p>
-              </div>
-            </div>
-
-            {/* CARD 2 (5 COLS): Direct Factory Supply & Cost Optimization */}
-            <div className="lg:col-span-5 relative min-h-[380px] sm:min-h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-[#E06518] group shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-5 sm:p-8 lg:p-10">
-              <img
-                src={STORE_ASSETS.whySanatDirectFactory}
-                alt="تأمین مستقیم و بدون واسطه از تولیدکنندگان جهانی"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-
-              {/* Top Metric Badge */}
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#12203C]/90 backdrop-blur-md border border-white/20 text-white text-[11px] font-bold shadow-md">
-                  تأمین مستقیم و بدون واسطه
-                </span>
-                <div className="text-right bg-[#12203C]/90 px-3.5 py-1.5 rounded-xl border border-white/20 backdrop-blur-md">
-                  <span className="text-2xl sm:text-3xl font-black text-[#E06518] font-mono tabular-nums">۲۵٪-</span>
-                  <span className="block text-[10px] text-slate-300">کاهش هزینه‌های خرید</span>
-                </div>
-              </div>
-
-              {/* Content Body */}
-              <div className="relative z-10 space-y-2.5 text-right text-white">
-                <div className="flex items-center gap-2 text-orange-400 text-xs font-bold">
-                  <Shield className="w-4 h-4 text-orange-400" />
-                  <span>حذف واسطه‌ها و صدور فاکتور رسمی</span>
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-white drop-shadow-sm">
-                  واردات و توزیع مستقیم با فاکتور رسمی
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
-                  ارتباط مستقیم با خطوط تولید برندهای معتبر بین‌المللی (FORZA و SWR) و تأمین انبوه با رقابتی‌ترین قیمت تمام‌شده در بازار صنعتی کشور.
-                </p>
-              </div>
-            </div>
-
-            {/* CARD 3 (5 COLS): Technical Blueprint CAD Consultation */}
-            <div className="lg:col-span-5 relative min-h-[380px] sm:min-h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-[#E06518] group shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-between p-5 sm:p-8 lg:p-10">
-              <img
-                src={STORE_ASSETS.whySanatCadEngineering}
-                alt="مشاوره فنی و تطبیق نقشه‌های ساخت مهندسی"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-
-              {/* Top Tag */}
-              <div className="relative z-10 flex items-center justify-between">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#12203C]/90 backdrop-blur-md border border-white/20 text-cyan-300 text-[11px] font-bold shadow-md">
-                  تطبیق مهندسی مکانیک
-                </span>
-                <span className="text-xs font-mono text-white font-bold bg-black/60 px-3.5 py-1.5 rounded-full backdrop-blur-md border border-white/10">
-                  CAD / 3D Modeling
-                </span>
-              </div>
-
-              {/* Content Body */}
-              <div className="relative z-10 space-y-2.5 text-right text-white">
-                <div className="flex items-center gap-2 text-cyan-300 text-xs font-bold">
-                  <Headphones className="w-4 h-4 text-cyan-300" />
-                  <span>مشاوره تخصصی مهندسین مقیم</span>
-                </div>
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-white drop-shadow-sm">
-                  تطبیق نقشه‌های ساخت و مشخصات قطعه
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
-                  بررسی دقیق نقشه ساخت، فشار کاری و ابعاد قطعات سفارشی با شرایط واقعی خطوط تولید قبل از ثبت سفارش نهایی جهت پیشگیری از اشتباه در خرید.
-                </p>
-              </div>
-            </div>
-
-            {/* CARD 4 (7 COLS): Express Logistics & 24h Delivery Guarantee */}
-            <div className="lg:col-span-7 relative min-h-[380px] sm:min-h-[440px] rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200 hover:border-[#E06518] group shadow-lg hover:shadow-2xl transition-all duration-500 flex flex-col justify-end p-5 sm:p-8 lg:p-10">
-              <img
-                src={STORE_ASSETS.whySanatExpressDelivery}
-                alt="ارسال فوری و لجستیک اکسپرس قطعات صنعتی به سراسر کشور"
-                referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent" />
-
-              {/* Floating Top Tag */}
-              <div className="absolute top-4 sm:top-6 right-4 sm:right-6 left-4 sm:left-6 flex items-center justify-between text-[11px] font-bold">
-                <span className="px-3.5 py-1.5 rounded-full bg-[#12203C]/90 backdrop-blur-md border border-white/20 text-amber-300 shadow-md">
-                  شبکه توزیع و لجستیک اورژانسی
-                </span>
-                <span className="text-orange-400 font-mono font-black px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md tabular-nums border border-white/10">
-                  &lt; ۲۴ ساعت تحویل کارخانه
-                </span>
-              </div>
-
-              {/* Content Body */}
-              <div className="relative z-10 space-y-2.5 text-right text-white">
-                <div className="flex items-center gap-2 text-amber-300 text-xs font-bold">
-                  <Truck className="w-4 h-4 text-amber-300" />
-                  <span>دپوی استراتژیک در انبار مرکزی</span>
-                </div>
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white drop-shadow-sm">
-                  ارسال روزانه و اکسپرس به تمامی شهرک‌های صنعتی
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 max-w-2xl leading-relaxed font-normal">
-                  موجودی آماده تحویل بیش از ۱۸,۰۰۰ پارت‌نامبر قطعات پرمصرف کارخانجات و ارسال سریع با ناوگان اختصاصی، تیپاکس و باربری‌های فوری به سراسر کشور.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
+      <MainBrandsBanner />
 
       {/* ========================================================================= */}
-      {/* 6.5 TECHNICAL ENCYCLOPEDIA & ARTICLES (دانشنامه و مقالات تخصصی مهندسی)     */}
+      {/* 9. WHY US - چرا ما؟ (چرا از شما بخرم؟)                                     */}
+      {/* ========================================================================= */}
+      <WhyChooseUsSection />
+
+      {/* ========================================================================= */}
+      {/* 10. CASE STUDIES - پروژه‌ها و تجارب واقعی (قبلاً انجامش داده‌اید؟)         */}
+      {/* ========================================================================= */}
+      <CaseStudiesSection />
+
+      {/* ========================================================================= */}
+      {/* 11. ARTICLES - دانشنامه تخصصی صنعت (دانش فنی دارید؟)                      */}
       {/* ========================================================================= */}
       <EncyclopediaArticlesSection />
 
       {/* ========================================================================= */}
-      {/* 7. CTA CONSULTATION & INQUIRY BANNER (مشاوره تخصصی و استعلام قیمت)        */}
+      {/* 12. FINAL CTA BANNER - فراخوان نهایی (قدم بعدی چیست)                       */}
       {/* ========================================================================= */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 my-8 sm:my-10">
-        <section
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-l from-[#C2410C] via-[#7C2D12] to-[#12203C] text-white shadow-xl border border-orange-900/30"
-          dir="rtl"
-        >
-          {/* Subtle Ambient Industrial Waves / Geometric Glow */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
-            <svg className="w-full h-full" viewBox="0 0 1200 240" preserveAspectRatio="none" fill="none">
-              <path d="M0,80 C300,10 600,160 900,70 C1050,30 1150,110 1200,80 L1200,240 L0,240 Z" fill="white" opacity="0.2" />
-              <path d="M0,120 C250,50 500,190 800,110 C1000,60 1100,170 1200,130 L1200,240 L0,240 Z" fill="white" opacity="0.1" />
-            </svg>
-          </div>
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:16px_16px] pointer-events-none" />
-
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 items-center">
-            
-            {/* RIGHT in desktop, BOTTOM in mobile: Text and Action Buttons */}
-            <div className="order-2 lg:order-1 lg:col-span-7 xl:col-span-7 p-6 sm:p-8 lg:p-10 space-y-4 text-right">
-              <div className="space-y-2">
-                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white tracking-tight">
-                  مشاوره تخصصی و استعلام قیمت
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-200 font-medium leading-relaxed max-w-xl">
-                  تیم کارشناسان ما، آماده پاسخگویی به سوالات شما و ارائه بهترین راهکارهاست
-                </p>
-              </div>
-
-              {/* Action Buttons Row */}
-              <div className="flex flex-wrap items-center gap-3 pt-2">
-                {/* Dark Navy Button: درخواست مشاوره */}
-                <button
-                  type="button"
-                  onClick={() => setIsConsultOpen(true)}
-                  className="h-11 px-6 bg-[#E06518] hover:bg-[#C95210] text-white font-bold text-xs sm:text-sm rounded-xl shadow-md hover:shadow-orange-500/30 transition-all flex items-center gap-2 cursor-pointer group shrink-0"
-                >
-                  <ChevronLeft className="w-4 h-4 text-white group-hover:-translate-x-0.5 transition-transform" />
-                  <span>درخواست مشاوره</span>
-                </button>
-
-                {/* Orange Phone Call Button */}
-                <a
-                  href="tel:02142772340"
-                  className="h-11 px-5 bg-[#12203C]/70 hover:bg-[#12203C]/80 border border-white/20 hover:border-white/40 text-white font-bold text-xs sm:text-sm rounded-xl transition-all flex items-center gap-2.5 backdrop-blur-xs cursor-pointer shrink-0"
-                  dir="ltr"
-                >
-                  <div className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center text-white shrink-0">
-                    <Phone className="w-3.5 h-3.5" />
-                  </div>
-                  <span className="font-mono tracking-wider font-extrabold text-white text-sm sm:text-base">
-                    ۰۲۱-۴۲۷۷۲۳۴۰
-                  </span>
-                </a>
-              </div>
-            </div>
-
-            {/* LEFT in desktop, TOP in mobile: Industrial Photo */}
-            <div className="order-1 lg:order-2 lg:col-span-5 xl:col-span-5 relative h-52 sm:h-60 lg:h-64 overflow-hidden">
-              <img
-                src={STORE_ASSETS.ctaConsultBanner}
-                alt="مشاوره تخصصی و استعلام قیمت قطعات خط تولید"
-                className="w-full h-full object-cover object-center"
-              />
-              {/* Gradient masks blending smoothly from image to banner bg */}
-              <div className="absolute inset-0 bg-gradient-to-l from-[#12203C]/90 via-transparent to-transparent hidden lg:block pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent lg:hidden pointer-events-none" />
-            </div>
-
-          </div>
-        </section>
-      </div>
+      <FinalLeadCtaBanner
+        onOpenConsult={() => setIsConsultOpen(true)}
+        onOpenVisualSearch={() => setIsVisualSearchOpen(true)}
+      />
 
       {/* Global Modals for interactive AI features */}
       <AiVisualPartSearchModal

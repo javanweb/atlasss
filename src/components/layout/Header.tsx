@@ -928,7 +928,7 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            {/* 4. خدمات صنعتی (White Wrench icon + Down Chevron) */}
+            {/* 4. راهکارها (Wrench icon) */}
             <div className="relative">
               <button
                 type="button"
@@ -946,7 +946,7 @@ export const Header: React.FC = () => {
                 }`}
               >
                 <Wrench className="w-4 h-4 text-white group-hover:text-[#E06518] shrink-0 transition-colors" />
-                <span>خدمات صنعتی</span>
+                <span>راهکارها</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 text-slate-400 group-hover:text-[#E06518] transition-transform duration-200 ${
                     activeDropdown === 'services' ? 'rotate-180 text-[#E06518]' : ''
@@ -958,7 +958,7 @@ export const Header: React.FC = () => {
               {activeDropdown === 'services' && (
                 <div className="absolute right-0 top-full w-76 bg-white text-[#55565A] rounded-b-2xl shadow-2xl border border-[#E3E5E6] p-3 z-50 animate-in fade-in duration-150 text-right">
                   <div className="text-[11px] font-bold text-[#777A7D] px-2 py-1 mb-1 border-b border-slate-100">
-                    خدمات مهندسی و پشتیبانی اطلس
+                    راهکارهای مهندسی و تأمین اطلس
                   </div>
                   <div className="space-y-1">
                     <button
@@ -1007,7 +1007,17 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            {/* 5. درباره اطلس (White User icon + Down Chevron) */}
+            {/* 5. مقالات و دانشنامه (White BookOpen icon - direct link) */}
+            <Link
+              to="/catalog"
+              onMouseEnter={() => setActiveDropdown(null)}
+              className="flex items-center gap-1.5 py-3 px-3 rounded-lg hover:bg-white/5 hover:text-[#E06518] transition-colors cursor-pointer text-white"
+            >
+              <BookOpen className="w-4 h-4 text-white group-hover:text-[#E06518] shrink-0 transition-colors" />
+              <span>مقالات و دانشنامه</span>
+            </Link>
+
+            {/* 6. درباره ما (White User icon + Down Chevron) */}
             <div className="relative">
               <button
                 type="button"
@@ -1025,7 +1035,7 @@ export const Header: React.FC = () => {
                 }`}
               >
                 <User className="w-4 h-4 text-white group-hover:text-[#E06518] shrink-0 transition-colors" />
-                <span>درباره هایپر صنعت</span>
+                <span>درباره ما</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 text-slate-400 group-hover:text-[#E06518] transition-transform duration-200 ${
                     activeDropdown === 'about' ? 'rotate-180 text-[#E06518]' : ''
@@ -1073,85 +1083,27 @@ export const Header: React.FC = () => {
               )}
             </div>
 
-            {/* 6. مشتریان (White Users icon + Down Chevron) */}
-            <div className="relative">
-              <button
-                type="button"
-                onClick={() => {
-                  setActiveDropdown(activeDropdown === 'clients' ? null : 'clients');
-                  setIsMegaMenuOpen(false);
-                }}
-                onMouseEnter={() => {
-                  if (activeDropdown && activeDropdown !== 'clients') {
-                    setActiveDropdown('clients');
-                  }
-                }}
-                className={`flex items-center gap-1.5 py-3 px-3 rounded-lg hover:bg-white/5 transition-colors cursor-pointer group ${
-                  activeDropdown === 'clients' ? 'text-[#E06518] bg-white/5' : 'text-white hover:text-[#E06518]'
-                }`}
-              >
-                <Users className="w-4 h-4 text-white group-hover:text-[#E06518] shrink-0 transition-colors" />
-                <span>مشتریان</span>
-                <ChevronDown
-                  className={`w-3.5 h-3.5 text-slate-400 group-hover:text-[#E06518] transition-transform duration-200 ${
-                    activeDropdown === 'clients' ? 'rotate-180 text-[#E06518]' : ''
-                  }`}
-                />
-              </button>
-
-              {/* Clients Dropdown */}
-              {activeDropdown === 'clients' && (
-                <div className="absolute right-0 top-full w-72 bg-white text-[#55565A] rounded-b-2xl shadow-2xl border border-[#E3E5E6] p-3 z-50 animate-in fade-in duration-150 text-right">
-                  <div className="text-[11px] font-bold text-[#777A7D] px-2 py-1 mb-1 border-b border-slate-100">
-                    مشتریان و صنایع طرف قرارداد
-                  </div>
-                  <div className="space-y-1">
-                    <Link
-                      to="/#our-clients-section"
-                      onClick={() => setActiveDropdown(null)}
-                      className="block p-2 rounded-lg hover:bg-orange-50 hover:text-[#E06518] text-xs transition-colors"
-                    >
-                      <div className="font-bold text-[#55565A]">کارخانجات و برندهای همکار</div>
-                      <div className="text-[10px] text-slate-500">بیش از ۱۲۰ کارخانه بزرگ در سراسر کشور</div>
-                    </Link>
-                    <Link
-                      to="/dealer"
-                      onClick={() => setActiveDropdown(null)}
-                      className="block p-2 rounded-lg hover:bg-orange-50 hover:text-[#E06518] text-xs transition-colors"
-                    >
-                      <div className="font-bold text-[#55565A]">شبکه نمایندگان استانی</div>
-                      <div className="text-[10px] text-slate-500">عاملیت‌های فروش فعال در یزد، تهران و اصفهان</div>
-                    </Link>
-                    <Link
-                      to="/account"
-                      onClick={() => setActiveDropdown(null)}
-                      className="block p-2 rounded-lg hover:bg-orange-50 hover:text-[#E06518] text-xs transition-colors"
-                    >
-                      <div className="font-bold text-[#55565A]">باشگاه مشتریان صنعتی اطلس</div>
-                      <div className="text-[10px] text-slate-500">تخفیف‌های پلکانی و خریدهای اعتباری</div>
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* 7. دانشنامه (White BookOpen icon - NO Chevron, direct link) */}
-            <Link
-              to="/catalog"
-              onMouseEnter={() => setActiveDropdown(null)}
-              className="flex items-center gap-1.5 py-3 px-3 rounded-lg hover:bg-white/5 hover:text-[#E06518] transition-colors cursor-pointer text-white"
-            >
-              <BookOpen className="w-4 h-4 text-white group-hover:text-[#E06518] shrink-0 transition-colors" />
-              <span>دانشنامه</span>
-            </Link>
-
           </nav>
 
-          {/* Left: Hotline Support Badge with Pulse */}
-          <div className="flex items-center gap-2 text-xs text-slate-400 font-mono" dir="ltr">
-            <span>۰۳۵-۳۸۷۳۹۹۰۰</span>
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[11px] text-slate-300 font-sans">پشتیبانی صنعتی:</span>
+          {/* Left: Prominent CTA 'درخواست مشاوره و استعلام' + Hotline Phone */}
+          <div className="flex items-center gap-3 py-1.5" dir="ltr">
+            <button
+              type="button"
+              onClick={() => setIsConsultModalOpen(true)}
+              className="h-8.5 px-4 bg-gradient-to-r from-[#C95210] to-[#E06518] hover:from-[#C2410C] hover:to-[#C95210] text-white font-black text-xs rounded-xl shadow-[0_4px_14px_rgba(224,101,24,0.35)] hover:shadow-[0_6px_18px_rgba(224,101,24,0.5)] hover:scale-[1.02] transition-all flex items-center gap-2 cursor-pointer active:scale-95 shrink-0"
+            >
+              <Headphones className="w-3.5 h-3.5 text-white" />
+              <span>درخواست مشاوره و استعلام</span>
+            </button>
+
+            <a
+              href="tel:03538739900"
+              className="hidden xl:flex items-center gap-1.5 text-slate-300 hover:text-white font-mono text-xs transition-colors"
+              title="پشتیبانی فنی و استعلام تلفنی"
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>۰۳۵-۳۸۷۳۹۹۰۰</span>
+            </a>
           </div>
         </div>
       </div>
